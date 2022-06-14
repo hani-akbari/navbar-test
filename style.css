@@ -5,12 +5,20 @@
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 nav{
+  position: relative;
   background: #1b1b1b;
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
+  margin-top: 50px;
+}
+.title{
+  text-align: center;
+  color: #1b1b1b;
+  padding-top: 10px;
+  font-size: 50px;
 }
 nav .menu-btn i{
   color: #fff;
@@ -18,57 +26,83 @@ nav .menu-btn i{
   cursor: pointer;
   display: none;
 }
-nav ul{
+.navbar ul{
   display: flex;
   flex-direction: row-reverse;
+justify-content: flex-start;
   list-style: none;
 }
-nav ul li a{
+nav .navbar ul li a{
   color: #fff;
   text-decoration: none;
   margin: 0 5px;
   font-size: 17px;
  transition: all 0.3s ease;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
 }
-nav ul li a:hover{
-  background-color: #fff;
-  color:#111;
+.navbar ul li a:hover{
+  color: cyan;
 }
-nav .logo{
-  font-size: 30px;
-  color: #fff;
-  font-weight: 700;
+.btn-box{
+  margin: 100px;
+}
+.btn-box1,.btn-box2{
+  display: flex;
+  justify-content: space-around;
+    align-items: center;
+  margin-top: 50px;
+
+}
+.button {
+  color: #464141;
+  display: inline-block;
+  width: 300px;
+  text-decoration: none;
+  padding: 20px 50px;
+  border: 1px solid #3c67e3;
+  border-radius: 10px;
+}
+.button:hover{
+  background-color: aqua;
 }
 #click{
   display: none;
 }
-@media  (max-width:940px){
+@media  (max-width:540px){
   nav .menu-btn i{
     display: block;
   }
-  nav ul{
-    position: fixed;
+  .navbar ul {
+    position: absolute;
     top: 70px;
-    left: -100%;
+    left: 0;
     background: #111;
-    height: 100vh;
-    width: 50%;
+    height: 300px;
+    width: 100%;
   text-align: center;
   display: block;
   transition: all 0.3s ease;
+  z-index: 1;
   }
-  nav ul li{
+  .navbar ul li{
     margin: 40px 0;
   }
-  nav ul li a:hover{
+  .navbar ul li a:hover{
     background: none;
     color: cyan;
+  }
+  .btn-box1,.btn-box2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+      gap: 3rem;
 
   }
-  #click:checked ~ ul{
-    left: 0;
+  
+  #click:checked ~  ul{
+    top: 0;
   }
   #click:checked ~ .menu-btn i::before{
     content: "\f00d";
